@@ -7,20 +7,20 @@ public class hw3 {
 				int[] arr1 = { 10, 20, 30, 50, 3, 60, -3 };
 				
 				//문제1. 주어진 배열 중에서 값이 60인 곳의 인덱스를 출력해보자.
-				
-				arr1[5]=60;
+	
 				for(int i=0; i<6; i++) {
-					System.out.println("arr1["+i+"]" );	
-				}
-						
-				
-				
+					 if(arr1[i]==60){	
+						 System.out.println(i);}
+				}		
 				
 				//문제2. 주어진 배열의 인덱스가 3인 곳은 출력하지 말고, 나머지만 출력해보자.
-
+				for(int i=0;i<6;i++) {
+					if(arr1[i]!=50)
+						System.out.println(arr1[i]);
+				}
 				
 				//문제3. 주어진 배열 안의 변경하고 싶은 값의 인덱스 번호를 입력받아, 그 값을 1000으로 변경해보자.
-		  		//   입력) 인덱스: 3 ->   {10, 20, 30, 1000, 3, 60, -3}
+		  		//  입력) 인덱스: 3 ->   {10, 20, 30, 1000, 3, 60, -3}
 
 				
 				//문제4. 주어진 배열의 요소에서 최대값과 최소값을 구해보자.
@@ -38,10 +38,29 @@ public class hw3 {
 				//
 				//		for (int i = 0; i < answer.length; i++) {
 				//			/* 해당 부분 코딩 */
-				//		}
+					
+					//answer의 숫자의 객수 -> counter 인덱스 매칭
+					//answer에서 데이터(값)이 나왔을때
+					//->counter의 인덱스로 바꾼다.
+					//answer->1
+					//counter[0] += counter[0]+1;
+					//answer->4
+					//counter[3]= counter [3]+1;
+//					counter[answer[i]]-1]++;
+//					counter[answer[i]]-1]+=1;
+//				
+//				
+//				
+//				
+				
+				
+				//}
+					//counter 배열의 크기만큼
 				//		for (int i = 0; i < counter.length; i++) {
 				//			/* 해당 부분 코딩 */
-				//
+					//couner[0]= answer에서 숫자 1의 갯수=3
+//					for(int j=0; j<counter[i]; j++){
+//					System.out.println("*");
 				//			System.out.println();
 				//		}
 				//	}
