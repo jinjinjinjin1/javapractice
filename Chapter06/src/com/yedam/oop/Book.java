@@ -52,6 +52,9 @@ public class Book {
 		this.isbn=isbn;
 	}
 	
+	void setkind(String kind) {
+		this.kind = kind;
+	}
 
 	//메소드
 	void getInfo(){
