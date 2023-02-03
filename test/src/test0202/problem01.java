@@ -12,10 +12,10 @@ public class problem01 {
 		 double result3 =(x * y);
 		 double result4 =(x / y);
 		//정수로 출력
-		 System.out.println(result1);
-		 System.out.println(result2);
-		 System.out.println(result3);
-		 System.out.println(result4);
+		 System.out.println(result1); //sysout((int)(num1+nim2));
+		 System.out.println(result2); //sysout((int)(num1-nim2));
+		 System.out.println(result3); //sysout((int)(num1*nim2));
+		 System.out.println(result4); //sysout((int)(num1/nim2));
 	}
 
 }
