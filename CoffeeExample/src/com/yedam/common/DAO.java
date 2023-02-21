@@ -1,10 +1,12 @@
 package com.yedam.common;
 
+import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Properties;
 
 public class DAO {
 	//DAO  -> DATE ACCESS OBJECT
@@ -30,16 +32,27 @@ public class DAO {
 	
 	
 	//hr 계정 접속
-	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String id = "hr";
-	String pw = "hr";
+//	String driver = "oracle.jdbc.driver.OracleDriver";
+//	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//	String id = "hr";
+//	String pw = "hr";
+	
+	Properties pro = new Properties();
+	
+String driver = null;
+String url = null;
+String id = null;
+String pw = null;
+	
 	
 	
 	//DB연결 메소드
 	public void conn() {
 		
 		try {
+			//db.properties의 정보 loading
+			getProperties();
+			
 			//1.드라이버 로딩
 			Class.forName(driver);
 			
@@ -70,6 +83,26 @@ public class DAO {
 	}catch (Exception e) {
 		e.printStackTrace();
 		}
+	}
+	
+	
+	//DB 접속 정보 호출 메소드
+	//1. 프로그램 안에 DB 관련 정보를 넣지 않기 위해서
+	//2. 프로그램 실행중 DB가 변경이 된다면...원래 프로그램 껐다가 내용 수정 후 켜야하는데..
+	//메조장 같은 곳에 내용을 불러와서 쓴다면...프로그램이 돌아가고 있는 도중에 메모장에 쓴
+	//내용을 불러가기 때문에, 프로그램 종료하지 않고 수정된 DB 관련 내용을 적용시킬수 있따. 
+	private void getProperties() {
+		try {
+			FileReader resource = new FileReader("src/config/db.properties");
+			pro.load(resource);
+			driver = pro.getProperty("driver");
+			url = pro.getProperty("url");
+			id = pro.getProperty("id");
+			pw = pro.getProperty("pw");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
 	}
 	
 }
