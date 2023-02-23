@@ -20,12 +20,15 @@ public class Patient {
 	private String ptName;
 	private int ptManager;
 	private String ptPain;
-	private int ptPhone;
+	private String ptPhone;
 	private int ptBirth;
 	private Date ptVisit;
 	private String ptJob;
-	private char ptSex;
+	private String ptSex;
 	private String ptDx;
+	
+	
+	
 	public int getPtId() {
 		return ptId;
 	}
@@ -50,10 +53,10 @@ public class Patient {
 	public void setPtPain(String ptPain) {
 		this.ptPain = ptPain;
 	}
-	public int getPtPhone() {
+	public String getPtPhone() {
 		return ptPhone;
 	}
-	public void setPtPhone(int ptPhone) {
+	public void setPtPhone(String ptPhone) {
 		this.ptPhone = ptPhone;
 	}
 	public int getPtBirth() {
@@ -68,18 +71,20 @@ public class Patient {
 	public void setPtVisit(Date ptVisit) {
 		this.ptVisit = ptVisit;
 	}
+	
 	public String getPtJob() {
 		return ptJob;
 	}
 	public void setPtJob(String ptJob) {
 		this.ptJob = ptJob;
 	}
-	public char getPtSex() {
+	public String getPtSex() {
 		return ptSex;
 	}
-	public void setPtSex(char ptSex) {
+	public void setPtSex(String ptSex) {
 		this.ptSex = ptSex;
 	}
+
 	public String getPtDx() {
 		return ptDx;
 	}
