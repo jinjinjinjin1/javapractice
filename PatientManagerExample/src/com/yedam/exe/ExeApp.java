@@ -3,6 +3,7 @@ package com.yedam.exe;
 import java.util.Scanner;
 
 import com.yedam.Patient.service.PatientService;
+import com.yedam.Reservation.service.ReservationService;
 import com.yedam.physio.service.PhysioService;
 
 
@@ -11,6 +12,8 @@ import com.yedam.physio.service.PhysioService;
 		Scanner sc = new Scanner(System.in);
 		
 		PhysioService ps = new PhysioService();	
+		
+		
 		String menu = "";
 		boolean run = true;
 		
@@ -20,9 +23,6 @@ import com.yedam.physio.service.PhysioService;
 		
 
 	private void run() {
-		
-		
-		
 		
 		
 		//내정보 조회, 탈퇴, 수정 
@@ -41,72 +41,75 @@ import com.yedam.physio.service.PhysioService;
 			}
 			
 		}
+	
 	}
 	
 	
 		private void loginMenu() {
 			//환자 관련 프로그램 출력-환자 등록 ,환자 조회 ,환자 수정, 환자 삭제, 예약 스케쥴, 자유게시판, 로그아웃
+			int loginMenu=0;
 			
-			PatientService pt= new PatientService();
+			PatientService pts= new PatientService();
+			ReservationService rvs= new ReservationService();
 			
-			System.out.println("===============================================================================");
-			System.out.println(" 1.환자등록 | 2.환자조회 | 3.환자수정 | 4.환자삭제 | 5.예약 스케쥴 | 6.자유게시판 | 7.로그아웃 ");
-			System.out.println("===============================================================================");
+			
+			System.out.println("===================================================================================================================================");
+			System.out.println(" 1.환자등록 | 2.모든 환자조회 | 3.특정 환자조회 | 4.환자수정 | 5.환자삭제 | 6.예약 조회 | 7.예약 등록 | 8.예약 수정 | 9.예약 삭제 | 10.자유게시판 | 11.로그아웃 ");
+			System.out.println("===================================================================================================================================");
 			
 			System.out.println("입력>");
 			menu = sc.nextLine();
 			
 			if(menu.equals("1")) {
 				//환자 등록
-				pt.insertpt(); //ss.insertStd();
+				pts.insertpt(); //ss.insertStd();
 				
 			}else if(menu.equals("2")) {
-				//환자 조회
-				pt.getPatientList(); //ss.getStudent(); 
-			
+				//모든 환자 조회
+				pts.getPatientList(); //ss.getStudent(); 
+				
 			}else if(menu.equals("3")) {
-				//환자 수정
-				pt.updatePt();//ss.updateStd();
+				//특정 환자 조회
+				pts.getPatinet();//ss.getStudent(); 
 			
 			}else if(menu.equals("4")) {
-				//환자 삭제
-				pt.deletePt();//ss.deleteStd();
-				
-			}else if(menu.equals("5")) {
-				//예약 스케줄
+				//환자 수정
+				pts.updatePt();//ss.updateStd();
 			
-				//break;
+			}else if(menu.equals("5")) {
+				//환자 삭제
+				pts.deletePt();//ss.deleteStd();
+				
 			}else if(menu.equals("6")) {
+				//예약 조회
+			
+			}else if(menu.equals("7")) {
+				//예약 등록
+				rvs.insertRes();
+			}else if(menu.equals("8")) {
+				//예약 수정
+				rvs.updateRes();
+
+			}else if(menu.equals("9")) {
+				//예약 삭제
+				rvs.deleteRes();
+			}else if(menu.equals("10")) {
 				//자유 게시판
 				
-				//break;
-			}else if(menu.equals("7")) {
-				System.out.println("로그아웃");
-				//break;
+			}else if(menu.equals("11")) {
+				System.out.println("로그아웃 완료");
+				System.out.println("오늘도 수고하셨습니다~^▽^~★☆");
+				PhysioService.physioInfo=null;
 			}
-			
-			
-			
-			
-			
 		}
-		
 		
 		
 
 		private void logoutMenu() {
-			System.out.println("1.로그인  2. 로그아웃 ");
-			System.out.println("입력 >");
-			menu = sc.nextLine();
-			
-			if(menu.equals("1")) {
 				ps.login();
-			}else if(menu.equals("2")) {
-				run = false;
-				System.out.println("로그아웃 완료~^▽^♥");
 				
 			}
-		}
+		
 		
 		
 	

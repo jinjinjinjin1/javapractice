@@ -65,23 +65,23 @@ public class PatientService {
 		}
 	}
 	
-////	//환자조회 - 2)특정 환자 조회
-//	public void getPatinet() {
-//		System.out.println("차트 번호>");
-//		int ptId = Integer.parseInt(sc.nextLine());
-//		
-//		Patient pt =
-//		PatientDAO.getInstance().getPatient(ptId);
-//		
-//		System.out.println("조회한 결과>");
-//		System.out.println(pt.toString());
-//		
-//		}
-	
-//	//환자 정보 수정
+	//환자조회 - 2)특정 환자 조회(차트번호로 조회)
+	public void getPatinet() {
+		System.out.println("차트 번호>");
+		int ptId = Integer.parseInt(sc.nextLine());
+		
+		Patient pt =
+		PatientDAO.getInstance().getPatient(ptId);
+		
+		System.out.println("조회한 환자 결과>");
+		System.out.println(pt.toString());
+		}
+
+//	//환자 정보 수정-연락처 수정
 	public void updatePt() {
 		Patient pt = new Patient();
-		System.out.println("차트번호 입력 >");
+		System.out.println("========환자 정보 수정 ========");
+		System.out.println("차트번호를 입력하세요. >");
 		pt.setPtId(Integer.parseInt(sc.nextLine()));
 		System.out.println("변경할 연락처 입력 >");
 		pt.setPtPhone(sc.nextLine());
@@ -90,31 +90,46 @@ public class PatientService {
 		PatientDAO.getInstance().updatePt(pt);
 		
 		if(result > 0) {
-			System.out.println("환자 정보 수정 완료");
+			System.out.println("☞환자 정보 수정 완료!");
 		} else {
-			System.out.println("환자 정보 수정 실패");
+			System.out.println("☞환자 정보 수정 실패!");
 		}
 		
 	}
 	
-//	//환자 삭제
+	//환자 삭제-차트번호로 삭제 
 	public void deletePt() {
-		System.out.println("========환자 삭제 ========");
-		System.out.println("삭제 차트 번호 >");
+		System.out.println("==========환자 삭제 =========");
+		System.out.println("차트 번호를 입력하세요. >");
 		int ptId = Integer.parseInt(sc.nextLine());
-		
 		Patient pt = new Patient();
 		pt.setPtId(ptId);
 		int result = 
 		PatientDAO.getInstance().getInstance().deletePt(pt);
 	
 		if(result > 0) {
-			System.out.println("환자 정보 삭제 완료");
+			System.out.println("☞환자 정보 삭제 완료!");
 		} else {
-			System.out.println("환자 정보 삭제 실패");
+			System.out.println("☞환자 정보 삭제 실패!");
 		}
 	}
-	
+//	
+//	//환자 삭제
+//	public void deletePt() {
+//	System.out.println("==========환자 삭제 =========");
+//	System.out.println("삭제할 환자 이름을 입력하세요. >");
+//	String ptName = sc.nextLine();
+//	Patient pt = new Patient();
+//	pt.setPtName(ptName);
+//	int result = 
+//	PatientDAO.getInstance().getInstance().deletePt(pt);
+//
+//	if(result > 0) {
+//		System.out.println("☞환자 기록 삭제 완료!");
+//	} else {
+//		System.out.println("☞환자 기록 삭제 실패!");
+//	}
+//}
 	
 
 	

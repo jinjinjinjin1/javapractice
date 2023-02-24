@@ -52,10 +52,15 @@ public class Employees {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	
 	
 	//toString
+	@Override
+	public String toString() {
+		return "Employees [employeeId=" + employeeId + ", employeeName=" + employeeName + ", managerId=" + managerId
+				+ ", locationId=" + locationId + ", email=" + email + "]";
+	}
+
 	
 	
 	

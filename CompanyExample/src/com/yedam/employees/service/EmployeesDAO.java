@@ -25,10 +25,13 @@ public class EmployeesDAO extends DAO {
 			
 			
 			//모든 사원 조회, 한 사원 조회, 사원 삭제, 수정, 등록
+			
 			//명심!! 각 DAO에서 사용하는 쿼리는 반드시 SqlDevolper에서 실행 해보고 자바에 적용 시킬 것.
+			//모든 사원 조회
 			public List<Employees> getEmployeesList(){
 				List<Employees> list = new ArrayList<>();
 				Employees empl = null;
+				
 				try {
 					conn();
 					String sql = "select * from emp";
@@ -81,18 +84,18 @@ public class EmployeesDAO extends DAO {
 			
 			//사원 삭제, 수정, 등록
 			//삭제
-			public int deleteEmp(Employees e) {
+			public int deleteEmp(Employees e1) {
 				int result = 0;
 				try {
 					conn();
 					String sql = "DELETE FROM emp WHERE employee_id = ?";
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1, e.getEmployeeId());
+					pstmt.setInt(1, e1.getEmployeeId());
 
 					result = pstmt.executeUpdate();
 
-				}catch(Exception e1) {
-					e1.printStackTrace();
+				}catch(Exception e) {
+					e.printStackTrace();
 				}finally {
 					disconn();
 				}

@@ -17,10 +17,11 @@ public class PhysioService {
 		//1.로그인
 		public void login() {
 			Physio physio = null;
+			System.out.println(" ＇ω＇예담병원 치료실 | 사내로그인 ");	
 			System.out.println("이름 > ");
 			String physioName = sc.nextLine();
 			System.out.println("사원번호 > ");
-			int physioPw =sc.nextInt();
+			int physioPw =Integer.parseInt(sc.nextLine());
 			
 			physio = PhysioDAO.getInstance().login(physioName);
 			
@@ -35,11 +36,11 @@ public class PhysioService {
 			
 			if(physio != null) { //데이터가 조회 되었다.
 				if(physio.equals(physioPw));{
-					System.out.println(physio.getPhysioName() + "님 환영합니다.^▽^");
+					System.out.println(physio.getPhysioName() + " 선생님 오늘도 화이팅하세요^▽^~★☆");
 					System.out.println("로그인 완료^▽^~★☆");
 					physioInfo = physio;
 				} if(physio == null) {
-					System.out.println("비밀번호가 틀립니다.");
+					System.out.println("사원 번호가 틀립니다.");
 				}
 			}else {
 				System.out.println("해당 이름은 존재하지 않습니다.");

@@ -3,6 +3,8 @@ package com.yedam.Patient.service;
 import java.sql.Date;
 
 public class Patient {
+	//DTO 혹은 VO
+	
 //	PATIENT_ID        NOT NULL NUMBER(8)      
 //	PATIENT_NAME      NOT NULL VARCHAR2(20)   
 //	PATIENT_MANAGER   NOT NULL NUMBER(6)      
@@ -93,14 +95,19 @@ public class Patient {
 	}
 	
 	
+//	@Override
+//	public String toString() {
+//		return "Patient [ptId=" + ptId + ", ptName=" + ptName + ", ptManager=" + ptManager + ", ptPain=" + ptPain
+//				+ ", ptPhone=" + ptPhone + ", ptBirth=" + ptBirth + ", ptVisit=" + ptVisit + ", ptJob=" + ptJob
+//				+ ", ptSex=" + ptSex + ", ptDx=" + ptDx + "]";
+//	}
+//	
 	@Override
 	public String toString() {
-		return "Patient [ptId=" + ptId + ", ptName=" + ptName + ", ptManager=" + ptManager + ", ptPain=" + ptPain
-				+ ", ptPhone=" + ptPhone + ", ptBirth=" + ptBirth + ", ptVisit=" + ptVisit + ", ptJob=" + ptJob
-				+ ", ptSex=" + ptSex + ", ptDx=" + ptDx + "]";
+		return "         ◈환자 차트기록지◈ \n 차트 번호: " + ptId + "\n 이름: " + ptName + "\n 담당치료사번호: " + ptManager + "\n 통증 부위: " + ptPain
+				+ "\n 연락처: " + ptPhone + "\n 생년월일: " + ptBirth + "\n 방문일: " + ptVisit + "\n 직업: " + ptJob
+				+ "\n 성별: " + ptSex + "\n 진단명: " + ptDx + "\n◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈";
 	}
-	
-	
 	
 	
 	
