@@ -78,6 +78,7 @@ public class PatientDAO extends DAO{
 				ptl.setPtPhone(rs.getString("patient_phone"));
 				ptl.setPtBirth(rs.getInt("patient_birthdate"));
 				ptl.setPtVisit(rs.getDate("patient_visitdate"));
+				ptl.setPtJob(rs.getString("patient_Job"));
 				ptl.setPtSex(rs.getString("patient_sex"));
 				ptl.setPtDx(rs.getString("patient_Diagnosis"));
 				
@@ -114,6 +115,7 @@ public class PatientDAO extends DAO{
 				ptl.setPtPhone(rs.getString("patient_phone"));
 				ptl.setPtBirth(rs.getInt("patient_birthdate"));
 				ptl.setPtVisit(rs.getDate("patient_visitdate"));
+				ptl.setPtJob(rs.getString("patient_Job"));
 				ptl.setPtSex(rs.getString("patient_sex"));
 				ptl.setPtDx(rs.getString("patient_Diagnosis"));
 			}
@@ -128,6 +130,7 @@ public class PatientDAO extends DAO{
 
 	//환자 정보 수정
 	public int updatePt(Patient pt) {
+		
 		int result =0;
 		try {
 			conn();

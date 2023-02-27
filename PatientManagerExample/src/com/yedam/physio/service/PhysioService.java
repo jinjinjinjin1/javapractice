@@ -36,8 +36,8 @@ public class PhysioService {
 			
 			if(physio != null) { //데이터가 조회 되었다.
 				if(physio.equals(physioPw));{
-					System.out.println(physio.getPhysioName() + " 선생님 오늘도 화이팅하세요^▽^~★☆");
-					System.out.println("로그인 완료^▽^~★☆");
+					System.out.println(" 로그인 완료^▽^ ");
+					System.out.println( physio.getPhysioName() + " 선생님 오늘도 화이팅하세요^▽^ ");
 					physioInfo = physio;
 				} if(physio == null) {
 					System.out.println("사원 번호가 틀립니다.");
@@ -58,7 +58,8 @@ public class PhysioService {
 			
 			if(result >0) {
 				PhysioService.physioInfo = null; //로그아웃
-				System.out.println("회원 로그아웃 완료^▽^");          //위에포함 두줄만 사용하라
+				System.out.println("로그아웃 완료^▽^");          //위에포함 두줄만 사용하라
+				
 			}
 		
 		

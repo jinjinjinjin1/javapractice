@@ -17,16 +17,19 @@ public class ReservationService {
 	//예약 조회(특정)
 	public void getReservation() {
 		System.out.println("예약 코드 >");
+		System.out.println("ex) 2023/00/00/0시 으로 입력해주세요.");
 		String resKey = sc.nextLine();
 		
-		Reservation res = new Reservation();
+		Reservation res = 
 		ReservationDAO.getInstance().getReservation(resKey);
+		
 		System.out.println("조회한 예약 결과>");
-		System.out.println(res.toString());
+		System.out.println(res);
 	}
 	//예약 등록--예약날짜, 예약 시간, 환자 아이디
 	public void insertRes() {
 		Reservation res = new Reservation();
+		
 		System.out.println("예약 날짜 > ");
 		res.setResDate(sc.nextLine());
 		System.out.println("예약 시간 > ");
@@ -34,6 +37,7 @@ public class ReservationService {
 		System.out.println("차트 번호 > ");
 		res.setPtId(Integer.parseInt(sc.nextLine()));
 		System.out.println("예약 코드 > ");
+		System.out.println("ex) 년도/달/일/시간 으로 입력해주세요.");
 		res.setResCode(sc.nextLine());
 		int result =ReservationDAO.getInstance().insertRes(res);
 		

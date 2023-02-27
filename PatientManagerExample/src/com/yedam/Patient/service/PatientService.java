@@ -58,7 +58,7 @@ public class PatientService {
 			System.out.println("연락처 : " + list.get(i).getPtPhone());
 			System.out.println("생년월일 : " + list.get(i).getPtBirth());
 			System.out.println("방문일 : " + list.get(i).getPtVisit());
-			System.out.println("직업 : " + list.get(i).getPtVisit());
+			System.out.println("직업 : " + list.get(i).getPtJob());
 			System.out.println("성별 : " + list.get(i).getPtSex());
 			System.out.println("진단명 : " + list.get(i).getPtDx());
 			System.out.println("============================================");

@@ -26,7 +26,7 @@ public class BoardService {
 		System.out.println("등록일> ");
 		b.setBoardReg(Date.valueOf(sc.nextLine()));
 		
-		int result = BoardDAO.getInstance().insertBo(b);
+		int result = BoardDAO.getInstance().insertb(b);
 		
 		if(result > 0) {
 			System.out.println("글 등록 완료");
@@ -52,10 +52,11 @@ public class BoardService {
 	//글 특정 조회
 		public void getBoard() {
 		System.out.println("글 번호 입력 >");
-		int bId = Integer.parseInt(sc.nextLine());
+		int bKey = Integer.parseInt(sc.nextLine());
 		
 		Board b =
-		BoardDAO.getInstance().getBoard(bId);
+		BoardDAO.getInstance().getBoard(bKey);
+		
 		System.out.println("조회한 글 결과>");
 		System.out.println(b.toString());
 		}

@@ -39,6 +39,7 @@ public class ReservationDAO extends DAO{
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
+				resl= new Reservation();
 				resl.setResDate(rs.getString("res_date"));
 				resl.setResTime(rs.getString("res_time"));
 				resl.setPtId(rs.getInt("patient_id"));

@@ -14,6 +14,17 @@ public class LoadingForm {
 	public LoadingForm() {
 		run();
 	}
+		
+	
+	//메뉴 선택 출력
+	private void menu() {
+		System.out.println("☆★☆★☆★또치`s 회사 프로그램☆★☆★☆★");
+		System.out.println("★ 1. 부서     2.사원       3.종료 ☆");
+		System.out.println("☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★");
+		System.out.println("입력 > ");
+		selectNo = Integer.parseInt(sc.nextLine());
+	}
+	
 	
 	private void run() {
 		
@@ -76,14 +87,7 @@ public class LoadingForm {
 		
 	}
 
-	//메뉴 선택 출력
-	private void menu() {
-		System.out.println("☆★☆★☆★또치`s 회사 프로그램☆★☆★☆★");
-		System.out.println("★ 1. 부서     2.사원       3.종료 ☆");
-		System.out.println("☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★");
-		System.out.println("입력 > ");
-		selectNo = Integer.parseInt(sc.nextLine());
-	}
+
 	
 	//부서관련 출력
 	private void departments() {

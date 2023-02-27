@@ -19,7 +19,7 @@ public class BoardDAO extends DAO{
 			 }
 			
 			 //글 등록
-			 public int insertBo(Board b) {
+			 public int insertb(Board b) {
 					int result = 0;
 					try {
 						conn();
@@ -58,7 +58,7 @@ public class BoardDAO extends DAO{
 							bl.setBoardNo(rs.getInt("board_number"));
 							bl.setBoardTt(rs.getString("board_title"));
 							bl.setBoardCon(rs.getString("board_content"));
-							bl.setBoardView(rs.getInt("board_view"));
+							bl.setBoardView(rs.getInt("board_viewNo"));
 							bl.setBoardReg(rs.getDate("board_regDate"));
 							
 							list.add(bl);
@@ -88,7 +88,7 @@ public class BoardDAO extends DAO{
 							bl.setBoardNo(rs.getInt("board_number"));
 							bl.setBoardTt(rs.getString("board_title"));
 							bl.setBoardCon(rs.getString("board_content"));
-							bl.setBoardView(rs.getInt("board_view"));
+							bl.setBoardView(rs.getInt("board_viewNo"));
 							bl.setBoardReg(rs.getDate("board_regDate"));
 						}
 					}catch(Exception e) {
