@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.yedam.Patient.service.PatientService;
 import com.yedam.Reservation.service.ReservationService;
+import com.yedam.board.service.BoardService;
 import com.yedam.physio.service.PhysioService;
 
 
@@ -51,7 +52,7 @@ import com.yedam.physio.service.PhysioService;
 			
 			PatientService pts= new PatientService();
 			ReservationService rvs= new ReservationService();
-			
+			BoardService  bs= new BoardService();
 			
 			System.out.println("===================================================================================================================================");
 			System.out.println(" 1.환자등록 | 2.모든 환자조회 | 3.특정 환자조회 | 4.환자수정 | 5.환자삭제 | 6.예약 조회 | 7.예약 등록 | 8.예약 수정 | 9.예약 삭제 | 10.자유게시판 | 11.로그아웃 ");
@@ -82,7 +83,7 @@ import com.yedam.physio.service.PhysioService;
 				
 			}else if(menu.equals("6")) {
 				//예약 조회
-			
+				rvs.getReservation();
 			}else if(menu.equals("7")) {
 				//예약 등록
 				rvs.insertRes();
@@ -95,7 +96,7 @@ import com.yedam.physio.service.PhysioService;
 				rvs.deleteRes();
 			}else if(menu.equals("10")) {
 				//자유 게시판
-				
+				bs.getBoard();
 			}else if(menu.equals("11")) {
 				System.out.println("로그아웃 완료");
 				System.out.println("오늘도 수고하셨습니다~^▽^~★☆");

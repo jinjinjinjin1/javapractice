@@ -55,7 +55,7 @@ public class Reservation {
 	
 	@Override
 	public String toString() {
-		return "         ◈환자 예약현황◈ \n 예약 날짜: " + resDate + "\n 예약 시간: " + resTime + "\n 예약 차트번호: " + ptId + "\n예약 불가능: " + resCode + "\n◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈";
+		return "         ◈환자 예약현황◈ \n 예약 날짜: " + resDate + "\n 예약 시간: " + resTime + "\n 예약 차트번호: " + ptId + "\n 예약 코드 : " + resCode + "\n◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈";
 	}
 	
 	

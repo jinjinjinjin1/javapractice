@@ -1,6 +1,10 @@
 package com.yedam.Reservation.service;
 
+import java.util.List;
 import java.util.Scanner;
+
+import com.yedam.board.service.Board;
+import com.yedam.board.service.BoardDAO;
 
 
 public class ReservationService {
@@ -9,13 +13,14 @@ public class ReservationService {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	//예약 조회
+
+	//예약 조회(특정)
 	public void getReservation() {
-		System.out.println("차트번호 >");
-		int ptId = Integer.parseInt(sc.nextLine());
+		System.out.println("예약 코드 >");
+		String resKey = sc.nextLine();
 		
-		Reservation res =
-		ReservationDAO.getInstance().getReservation(ptId);
+		Reservation res = new Reservation();
+		ReservationDAO.getInstance().getReservation(resKey);
 		System.out.println("조회한 예약 결과>");
 		System.out.println(res.toString());
 	}
@@ -28,7 +33,8 @@ public class ReservationService {
 		res.setResTime(sc.nextLine());
 		System.out.println("차트 번호 > ");
 		res.setPtId(Integer.parseInt(sc.nextLine()));
-		
+		System.out.println("예약 코드 > ");
+		res.setResCode(sc.nextLine());
 		int result =ReservationDAO.getInstance().insertRes(res);
 		
 		if(result > 0) {

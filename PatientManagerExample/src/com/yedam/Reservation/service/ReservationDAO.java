@@ -28,13 +28,13 @@ public class ReservationDAO extends DAO{
 		
 
 	//예약 조회 (등록 전 먼저 수행)
-		public Reservation getReservation(int resKey) {
+		public Reservation getReservation(String resKey) {
 			Reservation resl = null; //null이 나오면 빈상태라서 예약 등록 ok
 		try {
 			conn();
 			String sql = "SELECT * FROM reservation where res_code=?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1,resKey);
+			pstmt.setString(1,resKey);
 			
 			rs=pstmt.executeQuery();
 			
@@ -57,12 +57,12 @@ public class ReservationDAO extends DAO{
 		int result = 0;
 		try {
 			conn();
-			String sql = "insert into reservation values (?,?,?)";
+			String sql = "insert into reservation values (?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, res.getResDate());
 			pstmt.setString(2, res.getResTime());
 			pstmt.setInt(3, res.getPtId());
-			
+			pstmt.setString(4, res.getResCode());
 			result = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
