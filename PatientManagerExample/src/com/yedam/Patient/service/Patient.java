@@ -104,9 +104,9 @@ public class Patient {
 //	
 	@Override
 	public String toString() {
-		return "         ◈환자 차트기록지◈ \n 차트 번호: " + ptId + "\n 이름: " + ptName + "\n 담당치료사번호: " + ptManager + "\n 통증 부위: " + ptPain
-				+ "\n 연락처: " + ptPhone + "\n 생년월일: " + ptBirth + "\n 방문일: " + ptVisit + "\n 직업: " + ptJob
-				+ "\n 성별: " + ptSex + "\n 진단명: " + ptDx + "\n◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈";
+		return "────────────환자 차트기록지──────────── \n  차트 번호:  " + ptId + "\n  이   름:  " + ptName + "\n  담당 사원:  " + ptManager + "\n  통증  부위: " + ptPain
+				+ "\n  연 락 처:  " + ptPhone + "\n  생년 월일:  " + ptBirth + "\n  방 문 일:  " + ptVisit + "\n  직   업:  " + ptJob
+				+ "\n  성   별:  " + ptSex + "\n  진 단 명:  " + ptDx + "\n─────────────────────────────";
 	}
 	
 	

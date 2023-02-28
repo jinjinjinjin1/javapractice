@@ -17,12 +17,22 @@ public class PhysioService {
 		//1.로그인
 		public void login() {
 			Physio physio = null;
-			System.out.println(" ＇ω＇예담병원 치료실 | 사내로그인 ");	
-			System.out.println("이름 > ");
+			System.out.println("───────────────────────────────────────────────────────────────");
+			//System.out.println("          ꧁⍢⃝꧂                       ꧁⍢⃝꧂         ");
+			System.out.println("                                                               ");
+			System.out.println("               ♧ 예상치 못한 담걸림은 Ψ 예담병원 ♧                        ");
+			System.out.println("                                                                 ");
+			//System.out.println("                                                                ");
+			System.out.println("                   예담병원   |   사내로그인                        ");
+			System.out.println("                                                               ");
+			System.out.println("───────────────────────────────────────────────────────────────");
+			System.out.println();
+			System.out.println(" 사원 이름 > ");
 			String physioName = sc.nextLine();
-			System.out.println("사원번호 > ");
+			System.out.println();
+			System.out.println(" 사원 번호 > ");
 			int physioPw =Integer.parseInt(sc.nextLine());
-			
+			System.out.println();
 			physio = PhysioDAO.getInstance().login(physioName);
 			
 			//id를 통해서 회원 정보를 조회하고, 조회 된 결과에 따라서 login 여부를 결정
@@ -36,14 +46,17 @@ public class PhysioService {
 			
 			if(physio != null) { //데이터가 조회 되었다.
 				if(physio.equals(physioPw));{
-					System.out.println(" 로그인 완료^▽^ ");
-					System.out.println( physio.getPhysioName() + " 선생님 오늘도 화이팅하세요^▽^ ");
+					System.out.println();
+					System.out.println(" 로그인 완료 ((＾▽＾)) ");
+					System.out.println();
+					System.out.println("★ "+ physio.getPhysioName() + " ★ 선생님, 오늘도 화이팅하세요 ((＾▽＾))");
+					System.out.println();
 					physioInfo = physio;
 				} if(physio == null) {
-					System.out.println("사원 번호가 틀립니다.");
+					System.out.println(" 사원 번호가 틀립니다.");
 				}
 			}else {
-				System.out.println("해당 이름은 존재하지 않습니다.");
+				System.out.println(" 해당 이름은 존재하지 않습니다.");
 			}
 		}
 		
@@ -51,14 +64,14 @@ public class PhysioService {
 		
 		//4.회원 로그아웃 
 		public void logoutPhysio() {
-			System.out.println("이름 >");
+//			System.out.println("이름 >");
 			//자신의 이름을 넣었다.
 			//로그인 되어 있는 상태에서 사원 로그아웃.
-			int result = PhysioDAO.getInstance().logoutPhysio(sc.nextLine());
+//			int result = PhysioDAO.getInstance().logoutPhysio(sc.nextLine());
 			
-			if(result >0) {
-				PhysioService.physioInfo = null; //로그아웃
-				System.out.println("로그아웃 완료^▽^");          //위에포함 두줄만 사용하라
+//			if(result >0) {
+				physioInfo = null; //로그아웃
+				System.out.println("로그아웃 완료 ((＾▽＾))");          //위에포함 두줄만 사용하라
 				
 			}
 		
@@ -74,6 +87,6 @@ public class PhysioService {
 		
 		
 		
-}
+
 		
 		

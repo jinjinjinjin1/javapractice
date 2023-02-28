@@ -35,14 +35,23 @@ public class PatientDAO extends DAO{
 					+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1,pt.getPtId());
+		System.out.println();
 		pstmt.setString(2, pt.getPtName());
+		System.out.println();
 		pstmt.setInt(3, pt.getPtManager());
+		System.out.println();
 		pstmt.setString(4, pt.getPtPain());
+		System.out.println();
 		pstmt.setString(5, pt.getPtPhone());
+		System.out.println();
 		pstmt.setInt(6,pt.getPtBirth());
+		System.out.println();
 		pstmt.setDate(7, pt.getPtVisit());
+		System.out.println();
 		pstmt.setString(8, pt.getPtJob());
+		System.out.println();
 		pstmt.setString(9, pt.getPtSex());
+		System.out.println();
 		pstmt.setString(10, pt.getPtDx());
 		
 		result = pstmt.executeUpdate();
@@ -72,15 +81,25 @@ public class PatientDAO extends DAO{
 			while(rs.next()) {
 				ptl = new Patient();
 				ptl.setPtId(rs.getInt("patient_id"));
+				System.out.println();
 				ptl.setPtName(rs.getString("patient_name"));
+				System.out.println();
 				ptl.setPtManager(rs.getInt("patient_manager"));
+				System.out.println();
 				ptl.setPtPain(rs.getString("patient_pain"));
+				System.out.println();
 				ptl.setPtPhone(rs.getString("patient_phone"));
+				System.out.println();
 				ptl.setPtBirth(rs.getInt("patient_birthdate"));
+				System.out.println();
 				ptl.setPtVisit(rs.getDate("patient_visitdate"));
+				System.out.println();
 				ptl.setPtJob(rs.getString("patient_Job"));
+				System.out.println();
 				ptl.setPtSex(rs.getString("patient_sex"));
+				System.out.println();
 				ptl.setPtDx(rs.getString("patient_Diagnosis"));
+				System.out.println();
 				
 				list.add(ptl);
 			}
@@ -109,15 +128,25 @@ public class PatientDAO extends DAO{
 			if(rs.next()) {
 				ptl = new Patient();
 				ptl.setPtId(rs.getInt("patient_id"));
+				System.out.println();
 				ptl.setPtName(rs.getString("patient_name"));
+				System.out.println();
 				ptl.setPtManager(rs.getInt("patient_manager"));
+				System.out.println();
 				ptl.setPtPain(rs.getString("patient_pain"));
+				System.out.println();
 				ptl.setPtPhone(rs.getString("patient_phone"));
+				System.out.println();
 				ptl.setPtBirth(rs.getInt("patient_birthdate"));
+				System.out.println();
 				ptl.setPtVisit(rs.getDate("patient_visitdate"));
+				System.out.println();
 				ptl.setPtJob(rs.getString("patient_Job"));
+				System.out.println();
 				ptl.setPtSex(rs.getString("patient_sex"));
+				System.out.println();
 				ptl.setPtDx(rs.getString("patient_Diagnosis"));
+				System.out.println();
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -135,11 +164,13 @@ public class PatientDAO extends DAO{
 		try {
 			conn();
 			String sql = "update patient \r\n"
-					+ "set patient_phone =? \r\n"
+					+ "set patient_DIAGNOSIS =? \r\n"
 					+ "where patient_id =?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, pt.getPtPhone());
+			pstmt.setString(1, pt.getPtDx());
+			System.out.println();
 			pstmt.setInt(2, pt.getPtId());
+			System.out.println();
 		
 			result = pstmt.executeUpdate();
 			

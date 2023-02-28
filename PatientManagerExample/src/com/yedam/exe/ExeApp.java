@@ -36,7 +36,8 @@ import com.yedam.physio.service.PhysioService;
 				loginMenu();	//1.로그인이 되어 있을 때 메뉴창
 			}else if(PhysioService.physioInfo == null) { //로그인 안됬다.
 				//로그인 전 메뉴
-				logoutMenu();	//2.로그인이 되어있지 않을때 메뉴창
+				ps.login();
+				//2.로그인이 되어있지 않을때 메뉴창
 			}
 			
 		}
@@ -46,15 +47,18 @@ import com.yedam.physio.service.PhysioService;
 	int selectNo = 0;
 	//메뉴선택 출력
 	private void loginMenu() {
-		System.out.println("★☆★☆☆★☆★☆☆★☆★☆★☆★☆★☆★예담 병원★☆★☆★☆★☆★☆★☆★☆★☆☆★☆★☆★☆");
-		System.out.println("★                                                       ☆");
-		System.out.println("☆     1.환자 관리     2.예약 관리    3.게시판     4.로그아웃     ☆");
-		System.out.println("★                                                       ☆");
-		System.out.println("★☆★☆☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★★☆★☆");
+		System.out.println("──────────────────────────────────예담 병원─────────────────────────────────");
+		System.out.println("                                                                          ");
+		System.out.println("                                                                          ");
+		System.out.println("              1.환자 관리   |   2.예약 관리   |   3.게시판   |   4.로그아웃        ");
+		System.out.println("                                                                          ");
+		System.out.println("                                                                          ");
+		System.out.println("──────────────────────────────────────────────────────────────────────────");
+		System.out.println();
 		System.out.println("입력 > ");
 		selectNo = Integer.parseInt(sc.nextLine());
 		
-		while(selectNo != 4) {
+//		while(selectNo != 4) {
 			//menu();
 			switch(selectNo) {
 			case 1:
@@ -66,15 +70,17 @@ import com.yedam.physio.service.PhysioService;
 			case 3:
 				Board();
 				break;
+				
 			case 4:
+				System.out.println();
 				System.out.println("로그아웃 완료");
 				System.out.println("오늘도 수고하셨습니다~^▽^");
 				PhysioService.physioInfo=null;
-				loginMenu();
+//				ps.login();
 				break;
 			}
 			
-		}
+//		}
 		
 		
 	}
@@ -84,10 +90,14 @@ import com.yedam.physio.service.PhysioService;
 		BoardService  bs= new BoardService();
 		
 		while(BoardMenu !=4) {
-			System.out.println("================================================================================");
-			System.out.println(" 1.게시글 등록 | 2.게시글 전체 조회 | 3.게시글 특정 조회| 4.게시글 수정 | 5.게시글 삭제 | 6.종료 ");
-			System.out.println("================================================================================");
-			
+			System.out.println("────────────────────────────────────────────예담 병원────────────────────────────────────────────────");
+			System.out.println("                                                                                                   ");
+			System.out.println("                                                                                                   ");
+			System.out.println("    1.게시글 등록  |  2.게시글 전체 조회  |  3.게시글 특정 조회  |  4.게시글 수정  |  5.게시글 삭제  |  6.뒤로가기    ");
+			System.out.println("                                                                                                   ");
+			System.out.println("                                                                                                   ");
+			System.out.println("───────────────────────────────────────────────────────────────────────────────────────────────────");
+			System.out.println();
 			BoardMenu=Integer.parseInt(sc.nextLine());
 			
 			switch(BoardMenu) {
@@ -108,6 +118,7 @@ import com.yedam.physio.service.PhysioService;
 				break;
 			case 6:
 				System.out.println("☞ 게시판 프로그램 종료");
+				System.out.println();
 				loginMenu();
 				break;
 			}
@@ -123,10 +134,15 @@ import com.yedam.physio.service.PhysioService;
 		ReservationService rvs= new ReservationService();
 		
 		while(ReservationMenu !=5) {
-			System.out.println("======================================================");
-			System.out.println("1.예약 조회 | 2.예약 등록 | 3.예약 수정 | 4.예약 삭제 | 5.종료  ");
-			System.out.println("======================================================");
-			
+			System.out.println("──────────────────────────────────────────────예담 병원───────────────────────────────────────────────");
+			System.out.println("                                                                                                    ");
+			System.out.println("                                                                                                    ");
+			System.out.println("                    1.예약 조회  |  2.예약 등록  |  3.예약 수정  |  4.예약 삭제  |  5.뒤로가기                 ");
+			System.out.println("                                                                                                    ");
+			System.out.println("                                                                                                    ");
+			System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────");
+			System.out.println();
+			System.out.println("입력 >");
 			ReservationMenu=Integer.parseInt(sc.nextLine());
 			
 			switch(ReservationMenu) {
@@ -144,6 +160,7 @@ import com.yedam.physio.service.PhysioService;
 				break;
 			case 5:
 				System.out.println("☞ 예약 관리 프로그램 종료");
+				System.out.println();
 				loginMenu();
 				break;
 
@@ -159,9 +176,14 @@ import com.yedam.physio.service.PhysioService;
 		PatientService pts= new PatientService();
 		
 		while(PatientMenu !=5) {
-			System.out.println("================================================================================");
-			System.out.println(" 1.환자 등록 | 2.모든 환자조회 | 3.특정 환자조회 | 4.환자 정보 수정 | 5.환자 정보 삭제 | 6. 종료");
-			System.out.println("================================================================================");
+			System.out.println("──────────────────────────────────────────────예담 병원───────────────────────────────────────────────");
+			System.out.println("                                                                                                    ");
+			System.out.println("                                                                                                    ");
+			System.out.println("         1.환자 등록 |  2.모든 환자조회 |  3.특정 환자조회 |  4.환자 정보 수정 |  5.환자 정보 삭제 |  6.뒤로가기       ");
+			System.out.println("                                                                                                    ");
+			System.out.println("                                                                                                    ");
+			System.out.println("────────────────────────────────────────────────────────────────────────────────────────────────────");
+			System.out.println();
 			System.out.println("입력 >");
 			
 			PatientMenu=Integer.parseInt(sc.nextLine());
@@ -184,6 +206,7 @@ import com.yedam.physio.service.PhysioService;
 				break;
 			case 6:
 				System.out.println("☞ 환자 관리 프로그램 종료");
+				System.out.println();
 				loginMenu();
 				break;
 			}
@@ -192,10 +215,12 @@ import com.yedam.physio.service.PhysioService;
 	}
 
 	
-				private void logoutMenu() {
-				ps.login();
-				
-			}
+//				private void logoutMenu() {
+//					
+//					ps.login();
+//					
+//				
+//			}
 		
 		
 		

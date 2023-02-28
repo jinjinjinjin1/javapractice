@@ -54,9 +54,9 @@ public class LoadingForm {
 		EmployeesService es = new EmployeesService();
 		
 		while(employeeMenu !=6) {
-			System.out.println("=============================================");
+			System.out.println("===================================================");
 			System.out.println("1. 모든 사원 조회 2. 사원 조회 3. 삭제 4. 수정 5. 등록 6. 종료");
-			System.out.println("=============================================");
+			System.out.println("==================================================");
 			System.out.println("입력 >");
 			
 			employeeMenu = Integer.parseInt(sc.nextLine());

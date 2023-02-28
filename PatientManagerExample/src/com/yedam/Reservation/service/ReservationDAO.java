@@ -41,9 +41,13 @@ public class ReservationDAO extends DAO{
 			if(rs.next()) {
 				resl= new Reservation();
 				resl.setResDate(rs.getString("res_date"));
+				System.out.println();
 				resl.setResTime(rs.getString("res_time"));
+				System.out.println();
 				resl.setPtId(rs.getInt("patient_id"));
+				System.out.println();
 				resl.setResCode(rs.getString("res_code"));
+				System.out.println();
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -61,9 +65,13 @@ public class ReservationDAO extends DAO{
 			String sql = "insert into reservation values (?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, res.getResDate());
+			System.out.println();
 			pstmt.setString(2, res.getResTime());
+			System.out.println();
 			pstmt.setInt(3, res.getPtId());
+			System.out.println();
 			pstmt.setString(4, res.getResCode());
+			System.out.println();
 			result = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
@@ -80,11 +88,17 @@ public class ReservationDAO extends DAO{
 			int result =0;
 			try {
 				conn();
-				String sql = "update reservation set res_date =?, res_time =? where patient_id =?";
+				String sql = "update reservation set res_date =?, res_time =?, res_code =? where patient_id =?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, res.getResDate());
+				System.out.println();
 				pstmt.setString(2, res.getResTime());
-				pstmt.setInt(3,res.getPtId());
+				System.out.println();
+				pstmt.setString(3, res.getResCode());
+				System.out.println();
+				pstmt.setInt(4,res.getPtId());
+				System.out.println();
+			
 				result = pstmt.executeUpdate();
 				
 			}catch(Exception e){
@@ -103,7 +117,7 @@ public class ReservationDAO extends DAO{
 					String sql = "delete from reservation WHERE patient_id = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setInt(1, res.getPtId());
-					
+					System.out.println();
 					result = pstmt.executeUpdate();
 					
 				}catch(Exception e) {
